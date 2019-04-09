@@ -23,5 +23,6 @@ print(data.shape)
 preds = model.predict(data)
 # decode the results into a list of tuples (class, description, probability)
 # (one such list for each sample in the batch)
-print('Predicted:', decode_predictions(preds, top=5))
+for i in range(data.shape[0]):
+    print('Predicted: ', i+1 , " ", decode_predictions(preds, top=5)[i], '\n')
 # Predicted: [(u'n02504013', u'Indian_elephant', 0.82658225), (u'n01871265', u'tusker', 0.1122357), (u'n02504458', u'African_elephant', 0.061040461)]
