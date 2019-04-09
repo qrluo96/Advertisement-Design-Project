@@ -9,6 +9,8 @@ model = ResNet50(weights='imagenet')
 path = '../Icon1Copy'
 folders = os.listdir(path)
 for folder in folders:
+    if folder[0] == '.':
+        continue
     data = np.zeros((1, 224, 224, 3))
     files = os.listdir(path+'/'+folder)
     for file in files:
