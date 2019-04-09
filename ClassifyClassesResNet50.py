@@ -29,7 +29,9 @@ for folder in folders:
     log = open(path+'/'+folder+"/class.txt", "w")
     for i in range(data.shape[0]):
         logInfo = 'Predicted: ' + str(i+1) + " " + str(decode_predictions(preds, top=5)[i]) + '\n'
-    log.write(logInfo)
+        log.write(logInfo)
+    log.close()
+
 
 
 # # Read images
