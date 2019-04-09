@@ -11,6 +11,8 @@ path = '../Icon1Copy/SEO'
 files = os.listdir(path)
 data = np.zeros((1, 224, 224, 3))
 for file in files:
+    if os.path.splitext(file)[-1] != ".png":
+        continue
     img = image.load_img(path+"/"+file, target_size=(224, 224))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
