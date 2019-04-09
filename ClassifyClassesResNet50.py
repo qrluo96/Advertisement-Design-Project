@@ -27,7 +27,7 @@ preds = model.predict(data)
 # (one such list for each sample in the batch)
 log = open(path+"/class.txt", "w")
 for i in range(data.shape[0]):
-    logInfo = 'Predicted: ', i+1 , " ", decode_predictions(preds, top=5)[i], '\n'
+    logInfo = 'Predicted: ' + str(i+1) + " " + str(decode_predictions(preds, top=5)[i]) + '\n'
     log.write(logInfo)
     #print('Predicted: ', i+1 , " ", decode_predictions(preds, top=5)[i], '\n')
 # Predicted: [(u'n02504013', u'Indian_elephant', 0.82658225), (u'n01871265', u'tusker', 0.1122357), (u'n02504458', u'African_elephant', 0.061040461)]
