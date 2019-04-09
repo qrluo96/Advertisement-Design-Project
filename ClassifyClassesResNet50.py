@@ -22,14 +22,14 @@ for folder in folders:
         x = preprocess_input(x)
         data = np.vstack((data, x))
 
-        data = data[1:]
-        # print(data.shape)
+    data = data[1:]
+    # print(data.shape)
 
-        preds = model.predict(data)
-        log = open(path+'/'+folder+"/class.txt", "w")
-        for i in range(data.shape[0]):
-            logInfo = 'Predicted: ' + str(i+1) + " " + str(decode_predictions(preds, top=5)[i]) + '\n'
-        log.write(logInfo)
+    preds = model.predict(data)
+    log = open(path+'/'+folder+"/class.txt", "w")
+    for i in range(data.shape[0]):
+        logInfo = 'Predicted: ' + str(i+1) + " " + str(decode_predictions(preds, top=5)[i]) + '\n'
+    log.write(logInfo)
 
 
 # # Read images
