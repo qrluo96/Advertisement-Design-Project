@@ -9,15 +9,18 @@ model = ResNet50(weights='imagenet')
 # Read images
 path = '../Icon1Copy/SEO'
 files = os.listdir(path)
+data = np.zeros((1, 224, 224, 3))
 for file in files:
     img = image.load_img(path+"/"+file, target_size=(224, 224))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
+    data = np.vstack((data, x))
 
-print(x.shape)
+data = data[1:]
+print(data.shape)
 
-preds = model.predict(x)
+preds = model.predict(data)
 # decode the results into a list of tuples (class, description, probability)
 # (one such list for each sample in the batch)
 print('Predicted:', decode_predictions(preds, top=5))
