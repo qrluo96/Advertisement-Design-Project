@@ -13,9 +13,9 @@ for file in files:
     img = image.load_img(path+"/"+file, target_size=(224, 224))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
 
-x = preprocess_input(x)
-#img_path = '../Icon1/Animal/1.png'
+print(x.shape)
 
 preds = model.predict(x)
 # decode the results into a list of tuples (class, description, probability)
