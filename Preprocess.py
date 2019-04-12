@@ -21,6 +21,6 @@ for folder in folders:
 
 data = data[1:]
 
-dataFile = open("./data.npy", "w")
+dataFile = open("../data.npy", "w")
 np.save(dataFile, data)
 
