@@ -19,6 +19,5 @@ for folder in folders:
 
 data = data[1:]
 
-dataFile = open("../data.npy", "w")
-np.save(dataFile, data)
+np.save("../data.npy", data)
 
