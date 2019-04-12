@@ -1,4 +1,3 @@
-from keras.applications.resnet50 import preprocess_input, decode_predictions
 from keras.preprocessing import image
 import numpy as np
 import os
@@ -16,7 +15,6 @@ for folder in folders:
         img = image.load_img(path+'/'+folder+'/'+file, target_size=(224, 224))
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
-        x = preprocess_input(x)
         data = np.vstack((data, x))
 
 data = data[1:]
