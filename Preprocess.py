@@ -18,6 +18,7 @@ for folder in folders:
         data = np.vstack((data, x))
 
 data = data[1:]
+print(data.shape)
 
 np.save("../data.npy", data)
 
