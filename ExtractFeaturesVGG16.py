@@ -11,7 +11,6 @@ data = np.load("../data.npy")
 
 features = model.predict(data)
 print(features.shape)
-print(features)
 
 np.save("../feature.npy", features)
 
