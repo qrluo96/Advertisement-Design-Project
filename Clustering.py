@@ -7,7 +7,7 @@ features = np.load("../feature.npy")
 
 features = np.reshape(features, (features.shape[0], -1))
 
-estimator = MiniBatchKMeans(n_clusters=100, batch_size=200)
+estimator = MiniBatchKMeans(n_clusters=100, batch_size=500)
 # max_iter=1000
 
 print("start fitting")
