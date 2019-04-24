@@ -1,12 +1,13 @@
 import numpy as np
 import os
 from sklearn.cluster import KMeans
+from sklearn.cluster import MiniBatchKMeans
 
 features = np.load("../feature.npy")
 
 features = np.reshape(features, (features.shape[0], -1))
 
-estimator = KMeans(n_clusters=100, max_iter=1000, n_jobs=-1)
+estimator = MiniBatchKMeans(n_clusters=100, max_iter=1000)
 
 print("start fitting")
 estimator.fit(features)
